@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}O nás – Pokémon Společné{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="section-title mb-4">O nás</h1>
+            <div class="info-box">
+                <p>Tohle je školní projekt ve Flasku. Používá Jinja2 šablony rozdělené do komponent
+                   (header, menu, banner, footer, karta Pokémona) a Bootstrap 5.</p>
+                <p class="mb-0">Veškeré vlastní styly jsou v jednom souboru <code>static/css/style.css</code>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

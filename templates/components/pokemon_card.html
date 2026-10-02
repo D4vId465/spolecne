@@ -1,0 +1,14 @@
+{# Očekává proměnnou "p" (slovník s id, name, types) #}
+<div class="card poke-card h-100">
+    <div class="poke-card-img">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ p.id }}.png"
+             alt="{{ p.name }}" loading="lazy">
+    </div>
+    <div class="card-body text-center">
+        <small class="text-muted">#{{ '%03d' % p.id }}</small>
+        <h3 class="h5 card-title mb-2">{{ p.name }}</h3>
+        {% for t in p.types %}
+            <span class="type-badge type-{{ t }}">{{ t }}</span>
+        {% endfor %}
+    </div>
+</div>

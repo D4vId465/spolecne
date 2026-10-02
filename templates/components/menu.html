@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% set ep = request.endpoint %}
+<ul class="navbar-nav ms-auto gap-lg-2">
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if ep == 'index' }}" href="{{ url_for('index') }}">Domů</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if ep == 'main.index' }}" href="{{ url_for('main.index') }}">Pokédex</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if ep == 'main.about' }}" href="{{ url_for('main.about') }}">O nás</a>
+    </li>
+</ul>

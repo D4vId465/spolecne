@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Domů – Pokémon Společné{% endblock %}
+
+{% block banner %}
+    {% include "components/banner.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="info-box">
+                <h2 class="h4">Pokédex</h2>
+                <p>Seznam Pokémonů s typy a čísly.</p>
+                <a href="{{ url_for('main.index') }}" class="btn btn-outline-poke">Prohlédnout</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box">
+                <h2 class="h4">Typy</h2>
+                <p>Oheň, voda, tráva, elektřina a další.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-box">
+                <h2 class="h4">O projektu</h2>
+                <p>Školní Flask aplikace s Bootstrapem 5.</p>
+                <a href="{{ url_for('main.about') }}" class="btn btn-outline-poke">Více</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

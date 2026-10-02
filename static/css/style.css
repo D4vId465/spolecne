@@ -1,0 +1,167 @@
+/* ===== Pokémon téma – vše v jednom souboru ===== */
+
+:root {
+    --poke-red: #e3350d;
+    --poke-red-dark: #b3280a;
+    --poke-yellow: #ffcb05;
+    --poke-blue: #3b4cca;
+    --poke-ink: #222224;
+    --poke-bg: #f4f6fb;
+    --poke-radius: 1rem;
+}
+
+body {
+    font-family: "Nunito", system-ui, sans-serif;
+    background: var(--poke-bg);
+    color: var(--poke-ink);
+}
+
+h1, h2, h3, h4, h5, .brand-text, .section-title {
+    font-family: "Fredoka", "Nunito", sans-serif;
+    font-weight: 700;
+}
+
+.section-title {
+    display: inline-block;
+    padding: .25rem 1.25rem;
+    background: var(--poke-yellow);
+    border: 3px solid var(--poke-ink);
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--poke-ink);
+}
+
+a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
+    outline: 3px solid var(--poke-blue);
+    outline-offset: 2px;
+}
+
+/* ===== Pokéball (čisté CSS) ===== */
+.pokeball {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--poke-ink);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at center, #fff 0 18%, var(--poke-ink) 19% 27%, transparent 28%),
+        linear-gradient(to bottom, var(--poke-red) 0 46%, var(--poke-ink) 46% 54%, #fff 54% 100%);
+}
+.pokeball-sm { width: 22px; height: 22px; border-width: 2px; }
+
+/* ===== Header + menu ===== */
+.poke-header {
+    background: var(--poke-red);
+    border-bottom: 5px solid var(--poke-ink);
+}
+.poke-header .navbar-brand { color: #fff; font-size: 1.4rem; }
+.poke-header .nav-link {
+    color: #fff;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: .4rem 1rem;
+}
+.poke-header .nav-link:hover { background: var(--poke-red-dark); }
+.poke-header .nav-link.active {
+    background: var(--poke-yellow);
+    color: var(--poke-ink);
+}
+
+/* ===== Banner ===== */
+.poke-banner {
+    position: relative;
+    padding: 4rem 0;
+    color: #fff;
+    background:
+        radial-gradient(circle at 85% 50%, #fff 0 9%, var(--poke-ink) 9% 11%, transparent 11%),
+        linear-gradient(170deg, var(--poke-red) 0 50%, var(--poke-ink) 50% 54%, #fff 54% 100%);
+    border-bottom: 5px solid var(--poke-ink);
+    overflow: hidden;
+}
+.banner-title {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    text-shadow: 3px 3px 0 var(--poke-ink);
+}
+.banner-text { font-size: 1.15rem; max-width: 34ch; text-shadow: 1px 1px 0 var(--poke-ink); }
+.banner-img {
+    width: min(100%, 320px);
+    filter: drop-shadow(0 8px 0 rgba(0, 0, 0, .25));
+}
+
+/* ===== Tlačítka ===== */
+.btn-poke {
+    background: var(--poke-yellow);
+    color: var(--poke-ink);
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    border: 3px solid var(--poke-ink);
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 var(--poke-ink);
+}
+.btn-poke:hover { background: #ffd83d; color: var(--poke-ink); }
+.btn-poke:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--poke-ink); }
+
+.btn-outline-poke {
+    border: 3px solid var(--poke-red);
+    color: var(--poke-red);
+    font-family: "Fredoka", sans-serif;
+    border-radius: 999px;
+}
+.btn-outline-poke:hover { background: var(--poke-red); color: #fff; }
+
+/* ===== Boxy a karty ===== */
+.info-box {
+    background: #fff;
+    border: 3px solid var(--poke-ink);
+    border-radius: var(--poke-radius);
+    box-shadow: 5px 5px 0 var(--poke-ink);
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.poke-card {
+    border: 3px solid var(--poke-ink);
+    border-radius: var(--poke-radius);
+    box-shadow: 5px 5px 0 var(--poke-ink);
+    overflow: hidden;
+}
+.poke-card-img {
+    background: radial-gradient(circle, #fff 30%, #dfe6f5 100%);
+    border-bottom: 3px solid var(--poke-ink);
+    padding: 1rem;
+}
+.poke-card-img img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+
+/* ===== Typy Pokémonů ===== */
+.type-badge {
+    display: inline-block;
+    padding: .15rem .8rem;
+    margin: 0 .15rem;
+    border-radius: 999px;
+    border: 2px solid var(--poke-ink);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .45);
+}
+.type-electric { background: #e0a800; }
+.type-grass    { background: #4caf50; }
+.type-poison   { background: #9c4dcc; }
+.type-fire     { background: #f0561f; }
+.type-water    { background: #2f80ed; }
+.type-ghost    { background: #5c4a9c; }
+.type-normal   { background: #8d8d7a; }
+
+/* ===== Footer ===== */
+.poke-footer {
+    background: var(--poke-ink);
+    color: #fff;
+    border-top: 5px solid var(--poke-red);
+}
+
+/* ===== Pohyb jen když ho uživatel nevypíná ===== */
+@media (prefers-reduced-motion: no-preference) {
+    .poke-card { transition: transform .15s ease; }
+    .poke-card:hover { transform: translateY(-4px) rotate(-1deg); }
+}

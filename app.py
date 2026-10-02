@@ -1,13 +1,19 @@
-from flask import Flask
-from main.routes import main_bp
-app = Flask(__name__)
+from flask import Flask, render_template
+from main import main_bp
 
-#Registrace Blueprintu
-app.register_blueprint(main_bp)
 
-@app.route("/about")
-def about():
-    return "<h1>O aplikaci</h1>"
+def create_app():
+    app = Flask(__name__)
+    app.register_blueprint(main_bp, url_prefix="/main")
+
+    @app.route("/")
+    def index():
+        return render_template("index.html")
+
+    return app
+
+
+app = create_app()
 
 if __name__ == "__main__":
     app.run(debug=True)
