@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Přihlášení – Pokémon Společné{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-5 col-xl-4">
+            <div class="login-box">
+                <div class="login-head">
+                    <span class="pokeball" aria-hidden="true"></span>
+                    <h1 class="h3 mb-0">Přihlášení</h1>
+                </div>
+
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endif %}
+
+                <form method="post" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Uživatelské jméno</label>
+                        <input type="text" class="form-control" id="username" name="username"
+                               value="{{ username or '' }}" autocomplete="username" required autofocus>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Heslo</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="password"
+                                   autocomplete="current-password" required>
+                            <button type="button" class="btn btn-toggle-pw" id="togglePassword"
+                                    aria-label="Zobrazit heslo" aria-pressed="false">Zobrazit</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-poke w-100">Přihlásit se</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+<script>
+    const pwInput = document.getElementById("password");
+    const pwButton = document.getElementById("togglePassword");
+
+    pwButton.addEventListener("click", () => {
+        const show = pwInput.type === "password";
+        pwInput.type = show ? "text" : "password";
+        pwButton.textContent = show ? "Skrýt" : "Zobrazit";
+        pwButton.setAttribute("aria-pressed", show);
+        pwButton.setAttribute("aria-label", show ? "Skrýt heslo" : "Zobrazit heslo");
+    });
+</script>
+{% endblock %}

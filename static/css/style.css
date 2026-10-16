@@ -159,7 +159,48 @@ a:focus-visible, .btn:focus-visible, .navbar-toggler:focus-visible {
     color: #fff;
     border-top: 5px solid var(--poke-red);
 }
-
+/* ===== Přihlášení ===== */
+.login-box {
+    background: #fff;
+    border: 3px solid var(--poke-ink);
+    border-radius: var(--poke-radius);
+    box-shadow: 5px 5px 0 var(--poke-ink);
+    overflow: hidden;
+    padding: 0 1.5rem 1.5rem;
+}
+.login-head {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin: 0 -1.5rem 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--poke-red);
+    color: #fff;
+    border-bottom: 3px solid var(--poke-ink);
+}
+.login-head h1 { text-shadow: 2px 2px 0 var(--poke-ink); }
+.login-box .form-control {
+    border: 2px solid var(--poke-ink);
+    border-radius: .75rem;
+}
+.login-box .form-control:focus {
+    border-color: var(--poke-blue);
+    box-shadow: 0 0 0 .2rem rgba(59, 76, 202, .25);
+}
+.login-box .input-group .form-control {
+    border-radius: .75rem 0 0 .75rem;
+}
+.btn-toggle-pw {
+    background: var(--poke-yellow);
+    color: var(--poke-ink);
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    border: 2px solid var(--poke-ink);
+    border-left: 0;
+    border-radius: 0 .75rem .75rem 0;
+    min-width: 6rem;
+}
+.btn-toggle-pw:hover { background: #ffd83d; color: var(--poke-ink); }
 /* ===== Pohyb jen když ho uživatel nevypíná ===== */
 @media (prefers-reduced-motion: no-preference) {
     .poke-card { transition: transform .15s ease; }
