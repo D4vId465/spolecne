@@ -19,3 +19,6 @@ def je_aktivni(self):
 
 def deaktivni(self):
     self.__aktivni = False
+
+def over_heslo(self,heslo):
+    return self.password == heslo
