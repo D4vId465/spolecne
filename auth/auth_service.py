@@ -10,6 +10,18 @@ class AuthService:
         return None
 
     def prihlas(self, email, heslo):
-        uzivatele = self.najdi_uzivatele(email)
-        if uzivatele is None:
+        uzivatel = self.najdi_uzivatele(email)
+
+        if uzivatel is None:
+            return None
+
+        if uzivatel.over_heslo(heslo):
+            return uzivatel
+
+        return None
+
+    def najdi_uzivatele_id(self, id):
+        for uzivatel in self.uzivatele:
+            if uzivatel.id == id:
+                return uzivatel
             return None
