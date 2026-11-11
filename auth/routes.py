@@ -10,13 +10,18 @@ def login():
     chyba = None
 
     if request.method == 'POST':
-        email = request.form.get('username', "")
-        password = request.form('username', "")
+        email = request.form.get('jmeno', "")
+        password = request.form.get('password', "")
+
         uzivatel = auth.prihlas(email, password)
 
-        if uzivatel is None:
+        if uzivatel is not None:
             session.clear()
-            session['username_id'] = uzivatel.id
+            session['uzivatel_id'] = uzivatel.id
+            session['uzivatel_jmeno'] = uzivatel.jmeno
+            session['uzivatel_role'] = uzivatel.role
+
+
 
             return redirect(url_for('index'))
 
