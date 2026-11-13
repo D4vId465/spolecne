@@ -12,8 +12,15 @@
         <li class="nav-item">
         <a class="nav-link {{ 'active' if ep == 'admin' }}" href="{{ url_for('admin') }}">Admin</a>
     </li>
+    {% if session.get("uzivatel_id") is not none %}
     <li>
         <li class="nav-item">
-        <a class="nav-link {{ 'active' if ep == 'auth.login' }}" href="{{ url_for('auth.login') }}">přihlásit se</a>
+        <a class="nav-link {{ 'active' if ep == 'auth.profil' }}" href="{{ url_for('auth.profil') }}">Profil</a>
     </li>
+    {% else %}
+    <li>
+        <li class="nav-item">
+        <a class="nav-link {{ 'active' if ep == 'auth.login' }}" href="{{ url_for('auth.login') }}">Přihlásit se</a>
+    </li>
+    {% endif %}
 </ul>

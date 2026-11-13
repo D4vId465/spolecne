@@ -24,4 +24,4 @@ class AuthService:
         for uzivatel in self.uzivatele:
             if uzivatel.id == id:
                 return uzivatel
-            return None
+        return None
