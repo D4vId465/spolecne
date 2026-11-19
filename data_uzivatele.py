@@ -1,6 +1,6 @@
 from models.user import User
 uzivatele = [
-    User(1, "Roman", "fries", "cingcong", "r.fries@seznam.cz", "RoRo", "admin"),
-    User(2, "Ben", "Yahu","heslo123", "bibi@isreal.cz", "bibi", "Uzivatel"),
-    User(3, "Don", "Tramp", "TajneHeslo", "D.Trump@seznam.cz", "TDonald", "Uzivatel")
+    User(1, "Roman", "Koleso", "cingcong", "r.Koleso@seznam.cz", "RoRo", "Uzivatel"),
+    User(2, "Ben", "Yahu","heslo123", "bibi@email.cz", "bibi", "admin"),
+    User(3, "Don", "Tramp", "TajneHeslo", "D.Tramp@seznam.cz", "TDonald", "Uzivatel")
 ]

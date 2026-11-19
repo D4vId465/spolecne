@@ -32,3 +32,14 @@ def profil():   #ošetření
     if session.get('uzivatel_id') is not None:
         return redirect(url_for('auth.login'))
     return render_template('auth/profil.html')
+
+@auth_bp.route('/admin')
+def admin():   #ošetření
+    if session.get('uzivatel_role') == "admin":
+        return redirect(url_for('admin'))
+    return render_template('admin.html')
+
+@auth_bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('auth.login'))
