@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, session, redirect, url_for, abort
 from main import main_bp
 from data_uzivatele import uzivatele
 from auth import auth_bp
@@ -16,6 +16,11 @@ def create_app():
 
     @app.route("/admin")
     def admin():
+        if session.get('uzivatel_id') is None:
+            return redirect(url_for('auth.login'))
+
+        if session.get('uzivatel_role') != 'admin':
+            abort(403)
         return render_template("admin.html", uzivatele=uzivatele)
 
     return app
