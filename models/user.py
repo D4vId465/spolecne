@@ -1,3 +1,4 @@
+from werkzeug.security import generate_password_hash, check_password_hash
 class User:
     def __init__(self, id, jmeno, prijmeni, password, email, nickname, role="Uzivatel"):
         self.id = id
@@ -21,4 +22,5 @@ class User:
         self.__aktivni = False
 
     def over_heslo(self,heslo):
-        return self.password == heslo
+        return check_password_hash(self.password, heslo)
+
